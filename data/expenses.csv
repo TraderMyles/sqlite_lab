@@ -1,0 +1,3 @@
+expense_id,tx_date,amount_cents,category_id,merchant,note,payment_method
+1,2025-10-25,1299,1,Sainsbury,veg,Card
+2,2025-10-25,340,2,TFL,bus,Card
