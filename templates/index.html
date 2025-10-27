@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome</h1>
+<p>Pick a module:</p>
+<ul class="cards">
+  <li><a class="card" href="{{ url_for('expenses_list') }}"><h3>Expenses</h3><p>Add & view spend, monthly report.</p></a></li>
+  <li><a class="card" href="{{ url_for('journal_list') }}"><h3>Journal</h3><p>Entries with tags and search.</p></a></li>
+  <li><a class="card" href="{{ url_for('contacts_list') }}"><h3>Contacts</h3><p>Contacts + notes, upsert by email.</p></a></li>
+</ul>
+{% endblock %}

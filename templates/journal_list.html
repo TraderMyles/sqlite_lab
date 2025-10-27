@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Journal</h1>
+
+<form action="{{ url_for('journal_list') }}" method="get" class="row">
+  <input type="text" name="q" value="{{ q }}" placeholder="Search text">
+  <input type="text" name="tag" value="{{ tag }}" placeholder="Tag" list="taglist">
+  <button type="submit">Search</button>
+</form>
+<datalist id="taglist">
+  {% for t in tags %}<option value="{{ t }}">{% endfor %}
+</datalist>
+
+<h2>Add entry</h2>
+<form action="{{ url_for('journal_add') }}" method="post" class="col form">
+  <input type="date" name="date" value="{{ request.args.get('date','') }}">
+  <input type="text" name="title" placeholder="Title">
+  <textarea name="content" rows="4" placeholder="Write your entry..." required></textarea>
+  <input type="text" name="tags" placeholder="Tags (comma-separated)">
+  <button type="submit">Save</button>
+</form>
+
+<h2>Recent</h2>
+<table>
+  <thead><tr><th>Date</th><th>Title</th><th>Tags</th><th>Preview</th><th></th></tr></thead>
+  <tbody>
+  {% for r in rows %}
+    <tr>
+      <td>{{ r.entry_date }}</td>
+      <td>{{ r.title }}</td>
+      <td>{{ r.tags }}</td>
+      <td>{{ r.preview }}</td>
+      <td>
+        <form action="{{ url_for('journal_delete', entry_id=r.entry_id) }}" method="post" onsubmit="return confirm('Delete this entry?');">
+          <button type="submit" class="danger">Delete</button>
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
