@@ -1,0 +1,7 @@
+contact_id,full_name,email,phone,company,created_at,note_count,last_note_date,last_note_title,last_note_preview
+7,Caroline Ives,,,RCOphth,2025-10-26,0,,,
+3,Florence Hall,flo@example.com,07123 456789,RCOphth,2025-10-26,2,2025-10-26,Follow-up,Sent reconciliation summary for October.
+5,Julie Martin,,,RCOphth,2025-10-26,1,2025-10-26,Ap,Invoice approvals flow clarified; target 48h turnaround.
+6,Mariann Novak,,,RCOphth,2025-10-26,0,,,
+2,Steve Knight,,,RCOphth,2025-10-26,1,2025-10-26,Quick chat,Bank feed timing and coding rules.
+4,Steve Knight,steve.knight@example.com,,RCOphth,2025-10-26,1,2025-10-26,Bank feed,Discussed coding rules for card spend.
